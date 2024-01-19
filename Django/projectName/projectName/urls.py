@@ -29,5 +29,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+   
+    # including project app with this
     path('', include('projectApp.urls')),
 ]

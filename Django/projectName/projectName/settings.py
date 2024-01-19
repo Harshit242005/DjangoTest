@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,8 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projectApp',
     'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
 ]
+# adding the JWT token access for the login 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
+# creating the access token time for the JWT 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +64,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    # for handling the Token based authentication
+    'projectApp.middleware.TokenValidationMiddleware',
+    # for handling logging for the request and response
+    'projectApp.middleware.LoggingMiddleware'
 ]
 
 # adding application endpoint and allow reqeust from it using the middlewar cors
