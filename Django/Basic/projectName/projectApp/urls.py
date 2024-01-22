@@ -18,7 +18,7 @@ Including another URLconf
 from django.urls import path
 from projectApp.views import home_view, about_view
 from .views import contact_view, hello_world
-from .views import signup, login, call_data
+from .views import signup, login
 
 from rest_framework_simplejwt.views import TokenVerifyView
 from rest_framework_simplejwt.views import (
@@ -38,6 +38,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    # test api endpoint to listen for the access token based request [get]
-    path('call_data/', call_data, name="call_data")
+    # # test api endpoint to listen for the access token based request [get]
+    # path('call_data/', call_data, name="call_data")
 ]

@@ -13,8 +13,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import HelloWorldSerializer
 
-# importing middleware class
-from .middleware import TokenValidationMiddleware
+# # importing middleware class
+# from .middleware import TokenValidationMiddleware
 
 def home_view(request):
     return HttpResponse("Welcome to the home page!")
@@ -33,8 +33,10 @@ def contact_view(request):
 @api_view(['GET', 'POST'])
 def hello_world(request):
     if request.method == 'GET':
+        print('we are sending of a response for hello world')
         return Response({'message': 'Hello, world! this is some new data sent from hello world page'})
     if request.method == 'POST':
+        print('responding to a post request from the hello world')
         return handle_post_request(request)
 
 
@@ -93,22 +95,22 @@ def login(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# test view for the access data 
-@api_view(['GET'])
-def call_data(request):
-    # 1. Retrieve Access Token from Request
-    access_token = request.headers.get('Authorization', '').split('Bearer ')[-1]
+# # test view for the access data 
+# @api_view(['GET'])
+# def call_data(request):
+#     # 1. Retrieve Access Token from Request
+#     access_token = request.headers.get('Authorization', '').split('Bearer ')[-1]
 
-    # 2. Validate Access Token using Custom Middleware
-    # (Assuming you have a custom middleware named CustomMiddleware)
-    is_valid_token = TokenValidationMiddleware.validate_token(access_token)
+#     # 2. Validate Access Token using Custom Middleware
+#     # (Assuming you have a custom middleware named CustomMiddleware)
+#     is_valid_token = TokenValidationMiddleware.validate_token(access_token)
 
-    # 3. Generate Response Object
-    current_date = datetime.now().strftime('%d/%m/%Y')
-    response_object = {
-        'current_date': current_date,
-        'status': 'valid' if is_valid_token else 'invalid',
-    }
+#     # 3. Generate Response Object
+#     current_date = datetime.now().strftime('%d/%m/%Y')
+#     response_object = {
+#         'current_date': current_date,
+#         'status': 'valid' if is_valid_token else 'invalid',
+#     }
 
-    # 4. Return Response
-    return Response(response_object, status=200 if is_valid_token else 401)
+#     # 4. Return Response
+#     return Response(response_object, status=200 if is_valid_token else 401)

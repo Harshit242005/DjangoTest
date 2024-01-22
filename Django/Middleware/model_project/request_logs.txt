@@ -1,0 +1,55 @@
+Watching for file changes with StatReloader
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /index/ HTTP/1.1" 200 228
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /index/ HTTP/1.1" 200 228
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python311\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py", line 17, in middleware
+    print(log_message['timestamp'])
+          ~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+"GET /index/ HTTP/1.1" 500 62964
+Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python311\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py", line 17, in middleware
+    print(log_message['timestamp'])
+          ~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+"GET /index/ HTTP/1.1" 500 63238
+Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python311\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py", line 17, in middleware
+    print(log_message['timestamp'])
+          ~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+"GET /index/ HTTP/1.1" 500 62964
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 216
+"GET /index/ HTTP/1.1" 200 228
+C:\Python311\Lib\logging\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_project\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 216
+C:\Users\abc\Documents\GitHub\DjangoTest\Django\Model\model_project\model_app\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /index/ HTTP/1.1" 200 228
